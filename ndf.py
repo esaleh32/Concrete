@@ -493,11 +493,7 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
 
         return X, y, sample_weight, None, missing
 
-   def fit(self, X, y=None,
-            sample_weight=None,
-            output_weight=None,
-            missing=None,
-            xlabels=None, linvars=[]):
+     def fit(self, X, y=None,sample_weight=None,output_weight=None,missing=None,xlabels=None, linvars=[]):
         '''
         Fit an Earth model to the input data X and y.
 
