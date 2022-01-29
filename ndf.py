@@ -134,7 +134,7 @@ ax.legend(fontsize=6)
 st.pyplot(fig)
 
 
-'''
+
 st.subheader('Minimum required number of cores for reliable mean estimation')
 df=pd.read_csv('hea2.csv')
 df.columns=['nc','risk','sd']
@@ -161,4 +161,4 @@ y_pred=MARS_model_fitted.predict(ss.reshape(1,-1))+((25-np.float(input_df.iloc[0
 if y_pred<3:
     y_pred=3
 st.write(f"{int(y_pred)}")
-'''
+
