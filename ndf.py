@@ -317,7 +317,6 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
         self.enable_pruning = enable_pruning
         self.feature_importance_type = feature_importance_type
         self.verbose = verbose
-
     def __eq__(self, other):
         if self.__class__ is not other.__class__:
             return False
@@ -335,7 +334,6 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
                 if np.any(v_self != v_other):
                     return False
         return True
-
     def __ne__(self, other):
         return not self.__eq__(other)
 
@@ -348,7 +346,6 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
             if name in kwargs and kwargs[name] is not None:
                 result[name] = kwargs[name]
         return result
-
     def _pull_pruning_args(self, **kwargs):
         '''
         Pull named arguments relevant to the pruning pass.
@@ -493,7 +490,7 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
 
         return X, y, sample_weight, None, missing
 
-     def fit(self, X, y=None,sample_weight=None,output_weight=None,missing=None,xlabels=None, linvars=[]):
+    def fit(self, X, y=None,sample_weight=None,output_weight=None,missing=None,xlabels=None, linvars=[]):
         '''
         Fit an Earth model to the input data X and y.
 
@@ -712,7 +709,7 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
         self.basis_ = forward_passer.get_basis()
 
 
-   def pruning_pass(self, X, y=None, sample_weight=None, output_weight=None,
+    def pruning_pass(self, X, y=None, sample_weight=None, output_weight=None,
                      missing=None, skip_scrub=False):
         '''
         Perform the pruning pass of the multivariate adaptive regression
@@ -858,7 +855,7 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
 #
 #         self.pruning_pass_record_ = record
 
-   def forward_trace(self):
+    def forward_trace(self):
         '''Return information about the forward pass.'''
         try:
             return self.forward_pass_record_
@@ -874,12 +871,12 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
             return None
 
 
-   def trace(self):
+    def trace(self):
         '''Return information about the forward and pruning passes.'''
         return EarthTrace(self.forward_trace(), self.pruning_trace())
 
 
-   def summary(self):
+    def summary(self):
         '''Return a string describing the model.'''
         result = ''
         if self.forward_trace() is None:
@@ -952,7 +949,7 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
         return result
 
 
-   def linear_fit(self, X, y=None, sample_weight=None, output_weight=None,
+    def linear_fit(self, X, y=None, sample_weight=None, output_weight=None,
                    missing=None, skip_scrub=False):
         '''
         Solve the linear least squares problem to determine the coefficients
@@ -1080,7 +1077,7 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
 #             gcv0[p] = gcv(mse0_p, 1, X.shape[0], self.get_penalty())
 #         self.grsq_ = ((1 - (gcv_ / gcv0)) * output_weight).sum()
 
-   def predict(self, X, missing=None, skip_scrub=False):
+    def predict(self, X, missing=None, skip_scrub=False):
         '''
         Predict the response based on the input data X.
 
