@@ -9,7 +9,7 @@ import numpy as np
 from scipy import sparse
 
 
-[docs]class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
+class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
 
     """
     Multivariate Adaptive Regression Splines
