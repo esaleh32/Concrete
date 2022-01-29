@@ -493,7 +493,7 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
 
         return X, y, sample_weight, None, missing
 
-[docs]    def fit(self, X, y=None,
+   def fit(self, X, y=None,
             sample_weight=None,
             output_weight=None,
             missing=None,
@@ -629,7 +629,7 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
 #             sample_weight, output_weight, xlabels=self.xlabels_, linvars=linvars)
 # #         self.basis_ = forward_passer.get_basis()
 #
-[docs]    def forward_pass(self, X, y=None,
+    def forward_pass(self, X, y=None,
                      sample_weight=None, output_weight=None,
                      missing=None,
                      xlabels=None, linvars=[], skip_scrub=False):
@@ -716,7 +716,7 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
         self.basis_ = forward_passer.get_basis()
 
 
-[docs]    def pruning_pass(self, X, y=None, sample_weight=None, output_weight=None,
+   def pruning_pass(self, X, y=None, sample_weight=None, output_weight=None,
                      missing=None, skip_scrub=False):
         '''
         Perform the pruning pass of the multivariate adaptive regression
@@ -862,7 +862,7 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
 #
 #         self.pruning_pass_record_ = record
 
-[docs]    def forward_trace(self):
+   def forward_trace(self):
         '''Return information about the forward pass.'''
         try:
             return self.forward_pass_record_
@@ -870,7 +870,7 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
             return None
 
 
-[docs]    def pruning_trace(self):
+    def pruning_trace(self):
         '''Return information about the pruning pass.'''
         try:
             return self.pruning_pass_record_
@@ -878,12 +878,12 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
             return None
 
 
-[docs]    def trace(self):
+   def trace(self):
         '''Return information about the forward and pruning passes.'''
         return EarthTrace(self.forward_trace(), self.pruning_trace())
 
 
-[docs]    def summary(self):
+   def summary(self):
         '''Return a string describing the model.'''
         result = ''
         if self.forward_trace() is None:
@@ -915,7 +915,7 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
         return result
 
 
-[docs]    def summary_feature_importances(self, sort_by=None):
+    def summary_feature_importances(self, sort_by=None):
         """
         Returns a string containing a printable summary of the estimated
         feature importances.
@@ -956,7 +956,7 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
         return result
 
 
-[docs]    def linear_fit(self, X, y=None, sample_weight=None, output_weight=None,
+   def linear_fit(self, X, y=None, sample_weight=None, output_weight=None,
                    missing=None, skip_scrub=False):
         '''
         Solve the linear least squares problem to determine the coefficients
@@ -1084,7 +1084,7 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
 #             gcv0[p] = gcv(mse0_p, 1, X.shape[0], self.get_penalty())
 #         self.grsq_ = ((1 - (gcv_ / gcv0)) * output_weight).sum()
 
-[docs]    def predict(self, X, missing=None, skip_scrub=False):
+   def predict(self, X, missing=None, skip_scrub=False):
         '''
         Predict the response based on the input data X.
 
@@ -1121,7 +1121,7 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
             return y
 
 
-[docs]    def predict_deriv(self, X, variables=None, missing=None):
+    def predict_deriv(self, X, variables=None, missing=None):
         '''
         Predict the first derivatives of the response based on the input
         data X.
@@ -1183,7 +1183,7 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
         return J
 
 
-[docs]    def score(self, X, y=None, sample_weight=None, output_weight=None,
+    def score(self, X, y=None, sample_weight=None, output_weight=None,
               missing=None, skip_scrub=False):
         '''
         Calculate the generalized r^2 of the model on data X and y.
@@ -1258,7 +1258,7 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
         return 1 - (mse / mse0)
 
 
-[docs]    def score_samples(self, X, y=None, missing=None):
+    def score_samples(self, X, y=None, missing=None):
         '''
 
         Calculate sample-wise fit scores.
@@ -1305,7 +1305,7 @@ class Earth(BaseEstimator, RegressorMixin, TransformerMixin):
         return residual
 
 
-[docs]    def transform(self, X, missing=None):
+    def transform(self, X, missing=None):
         '''
         Transform X into the basis space.  Normally, users will call the
         predict method instead, which both transforms into basis space
