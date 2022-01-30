@@ -133,7 +133,9 @@ ax.plot(_x, _y, label='Conversion model for local strengths estimation',color='m
 ax.plot([np.min(df.iloc[:,0]),np.max(df.iloc[:,0])],[intercept+slope*np.min(df.iloc[:,0]),intercept+slope*np.max(df.iloc[:,0])],color='blue',linestyle='--',label='Conversion model for mean and variability estimation')
 ax.legend(fontsize=6)
 st.pyplot(fig)
+t=input_df.qm=='Average'
 
+sq=input_df.qm=='Low'
 
 
 st.subheader('Minimum required number of cores for reliable mean estimation')
@@ -152,6 +154,10 @@ rf = pickle.load(open('rf.pkl', 'rb'))
 ss=np.array([input_df.iloc[0,input_df.columns=='ar'],input_df.iloc[0,input_df.columns=='vr']*30])
 y_pred=rf.predict(ss.reshape(1,-1))+((10-np.float(input_df.iloc[0,input_df.columns=='em']))/10)
 y_pred=np.round(y_pred,0)
+if t.any():
+    y_pred=y_pred+2
+if sq.any():
+    y_pred=y_pred+3
 if y_pred<3:
     y_pred=3
 st.write(f"{int(y_pred)}")
@@ -166,6 +172,10 @@ ss=np.array([input_df.iloc[0,input_df.columns=='ar'],input_df.iloc[0,input_df.co
 
 y_pred=rf2.predict(ss.reshape(1,-1))+((25-np.float(input_df.iloc[0,input_df.columns=='esd']))/25)*3
 y_pred=np.round(y_pred,0)
+if t.any():
+    y_pred=y_pred+2
+if sq.any():
+    y_pred=y_pred+3
 if y_pred<3:
     y_pred=3
 st.write(f"{int(y_pred)}")
