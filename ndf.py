@@ -13,7 +13,6 @@ import scipy
 from sklearn.linear_model import LinearRegression
 import statsmodels.formula.api as smf
 import statistics
-from pyearth import Earth
 import pickle
 
 
