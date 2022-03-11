@@ -1,7 +1,6 @@
 import streamlit as st
 from multiapp import MultiApp
 import Home2
-import data_stats
 import ndf2
 import cores
 import Help
