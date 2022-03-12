@@ -16,4 +16,4 @@ def app():
 
     st.write('Navigate to **Minimum number of cores** page to estimate the minimum number of cores for concrete strength estimation')
     st.write ('Navigate to **Conversion models** page to estimate the necessary conversion models for concrete strength estimation')
-    st.write ('Navigate to Help to display the application help system.')
+    st.write ('Navigate to **Help** to display the application help system.')
