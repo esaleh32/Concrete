@@ -96,7 +96,7 @@ def app ():
 
     st.subheader('Visualization')
     fig, ax = plt.subplots(figsize=(4, 3))
-    ax.scatter(df.iloc[:,0], df.iloc[:,1],color='purple',  marker='o',s=50,alpha=1,edgecolor='k')
+    ax.scatter(df.iloc[:,0], df.iloc[:,1],color='red',  marker='o',s=50,alpha=1,edgecolor='k')
     ax.set_xlabel('NDT measurement')
     ax.set_ylabel('Core test measurement')
     #ax.plot([np.min(df.iloc[:,0]),np.max(df.iloc[:,0])],[k+g*np.min(df.iloc[:,0]),k+g*np.max(df.iloc[:,0])],color='magenta',label='Conversion model for local strengths estimation')
