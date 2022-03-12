@@ -39,7 +39,7 @@ def app():
         bill_length_mm = st.sidebar.slider('Accepted error in the mean estimation %', 0,100,10)
         bill_depth_mm = st.sidebar.slider('Accepted error in the variability estimation %', 0,100,25)
         flipper_length_mm = st.sidebar.slider('Accepted risk %', 0,100,10)
-        body_mass_g = st.sidebar.slider('coefficient of variation of rebound hammer readings, VR (units):', 0.0,1.0,0.4)
+        body_mass_g = st.sidebar.slider('coefficient of variation in NDT measurements', 0.0,1.0,0.4)
 
 
         data = {'qm': island,
