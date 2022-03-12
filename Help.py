@@ -9,8 +9,9 @@ from PIL import Image
 image = Image.open('image.jpg')
 def app():
      st.title('Help page')
+     st.write('These apps were programmed as part of my article, namely **"A Comprehensive Evaluation of Existing and New Model-identification approaches for Non-destructive Concrete Strength Assessment"**, submitted to **"Construction and Building materials"** jounral')
+
      st.subheader('Minimum number of cores')
-     st.write('This app was programmed as part of my article, namely **"A Comprehensive Evaluation of Existing and New Model-identification approaches for Non-destructive Concrete Strength Assessment"**, submitted to **"Construction and Building materials"** jounral')
      st.write('It allows to estimate the minimum number of cores for reliable estimation of mean concrete strength and concrete variability by defining the five-inputs:')
      st.write('1)Quality of measurements')
      st.write('2)Accepted error in mean estimation')
