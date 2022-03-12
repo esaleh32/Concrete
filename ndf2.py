@@ -22,7 +22,7 @@ def app ():
 
     **This app estimates the conversion models for concrete strength assessment **
     """)
-    path = st.text_input('select CSV file that contains the NDT and core test measurements')
+
     path=st.file_uploader("Upload CSV file that contains the NDT and core test measurements",type=['csv'])
     if path:
         df =pd.read_csv(path)
