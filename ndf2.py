@@ -23,35 +23,31 @@ def app ():
     **This app estimates the conversion models for concrete strength assessment **
     """)
     path = st.text_input('select CSV file that contains the NDT and core test measurements')
+    path=st.file_uploader("Upload CSV file that contains the NDT and core test measurements",type=['csv'])
     if path:
-        df = pd.read_csv(path)
+        df =pd.read_csv(path)
         df
     else:
         df=pd.read_csv("example input file.csv")
 
     st.write (
     'Press to download an example CSV input file')
-    df2= pd.read_csv("example input file.csv")
+    
     @st.cache
     def convert_df(df):
-       return df.to_csv(index=False).encode('utf-8')
-    csv = convert_df(df2)
+        return df.to_csv(index=False).encode('utf-8')
+    csv = convert_df(df)
+
 
     st.download_button(
-       "Example CSV input file",
-       csv,
-       "file.csv",
-       "text/csv",
-       key='download-csv'
-    )
+           "Example CSV input file",
+        csv,
+        "file.csv",
+        "text/csv",
+        key='download-csv'
+        )
 
-
-
-    #x=st.text_input("How could you elaborate NLP?")
-
-    #st.number_input('Enter your age', 5, 100, 77)
-    #st.number_input('Enter your age', 5.5)
-    #st.write(df.iloc[:,1])
+  
 
     def deming_regresion(df, X, y, delta = 1):
 
