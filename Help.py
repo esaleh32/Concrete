@@ -37,8 +37,8 @@ def app():
      image2 = Image.open('image2.jpg')
      st.image(image2, caption='Concrete strength assessment process using the combined results of NDT and core tests.')
      st.write ('The conversion model is a relationship that is used to convert the NDT test results spread out over the entire structure to in-situ compressive strength values.')
-     st.write ('Based on an extensive analysis of sythetic data of NDT and core test measurements, a hybrid conversion model identification system that uses the bi-objective approach proposed by Alwash et al. for mean and variability estimation of concrete strength and quantile regression for local concrete strengths estimation is proposed.') 
-     st.write ('Thus, this app estimates two conversion models one for the evaluation of mean and variability of concrete strength and one for the estimation of local strengths')
+     st.write ('Based on an extensive analysis of sythetic data of NDT and core test measurements, a hybrid conversion model identification system that uses **the bi-objective approach** proposed by Alwash et al. for mean and variability estimation of concrete strength and **quantile regression** for local concrete strengths estimation is proposed.') 
+     st.write ('Thus, this app estimates two conversion models one for the evaluation of mean and variability of concrete strength (from the bi-objective approach) and one for the estimation of local strengths (from quantile regression')
      st.write ('The user require to upload a file that contains the NDT and core test measurements obtained through the assessement process then it will provide the user with the necessary conversion models for concrete assessement, in addition, the app will provide visulazation of the data and the resulted conversion models as shown in the figure below')
      
      st.image(image4)
