@@ -41,5 +41,38 @@ def app():
      st.write ('The user require to upload a file that contains the NDT and core test measurements obtained through the assessement process then it will provide the user with the necessary conversion models for concrete assessement, in addition, the app will provide visulazation of the data and the resulted conversion models as shown in the figure below')
      image4 = Image.open('image4.jpg')
      st.image(image4)
+     st.subheader('details on the derivation of the minimum number of cores process')
+     st.write ('  1) large sets of synthetic data with different properties were simulated')
+     st.write('  2)  For each set (defined by mean concrete strength, concrete variability, quality of measurements, and VR that can be derived from the aforementioned properties), the CDF curves for different numbers of cores are constructed.')
+     st.write('  3)  For a certain margin of error, the risk values were estimated from the CDF shown in the figure above. This will generate relationships between the number of cores and risk values for each set of synthetic data')
+     st.write ('  4) From these relationships, the number of cores corresponding to a certain risk value is obtained')
+ 
+
+
+  
+ 
+
+
+
+
+
+
+
+
+ 
+  
+
+
+
+
+ 
+
+
+  
+ 
+
+
+
+
 
 
