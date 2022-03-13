@@ -74,7 +74,7 @@ def app ():
     X=df.NDT
     #slope=np.round(statistics.stdev(y)/statistics.stdev(X),2)
     #intercept=np.round(np.mean(y)-slope*np.mean(X),2)
-    st.subheader('Conversion model for mean concrete strength estimation')
+    st.subheader('Conversion model for mean concrete strength and concrete variability estimation')
     st.write(f"Core measurement = {intercept}+{slope}(NDT)", unsafe_allow_html=True)
 
     st.subheader('Conversion model for local strengths estimation')
