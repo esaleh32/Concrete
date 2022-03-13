@@ -7,7 +7,6 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 image = Image.open('image.jpg')
-image2 = Image.open('image2.jpg')
 
 def app():
      st.title('Help page')
@@ -25,6 +24,7 @@ def app():
      st.write ('The minimum numbers of cores corrosponds to the above inputs were dervied using sythetic data analysis of NDT and core test measurements')
      st.subheader('Conversion models app')
      st.write('The common practice of concrete strength assessment is to combine non-destructive techniques (NDT) with core test measurements to develop a conversion model that is used to estimate the strengths at NDT test locations. The figure below illustrates a graphical description of this assessment method.')
+     image2 = Image.open('image2.jpg')
      st.image(image2, caption='Concrete strength assessment process using the combined results of NDT and core tests.')
      st.write ('The conversion model is a relationship that is used to convert the NDT test results spread out over the entire structure to in-situ compressive strength values.')
      st.write ('Based on an extensive analysis of sythetic data of NDT and core test measurements, a hybrid conversion model identification system that uses the bi-objective approach proposed by Alwash et al. for mean and variability estimation of concrete strength and quantile regression for local concrete strengths estimation is proposed.') 
