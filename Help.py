@@ -9,6 +9,8 @@ from PIL import Image
 image = Image.open('image.jpg')
 image4 = Image.open('image4.jpg')
 image2 = Image.open('image2.jpg')
+image3 = Image.open('image3.jpg')
+
 
 
 def app():
@@ -25,7 +27,6 @@ def app():
      st.write('The concept of accepted error and risk in the estimation can be illustrated in following figure')
      st.image(image, caption='The concept of CDF used for evaluating the uncertainty (risk) in the estimation ')
      st.write ('It should be noted that the minimum numbers of cores that corrosponds to the above inputs were dervied using sythetic data analysis of NDT and core test measurements')
-     image3 = Image.open('image3.jpg')
      st.write ('For example,the user may need to know the minimum number of cores for mean and variability estimation of concrete strength that corrosponds to:')
      st.write('High quality of measurements')
      st.write ('Accepted error in the mean estimation % =10%')
