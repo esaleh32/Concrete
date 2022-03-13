@@ -48,7 +48,7 @@ def app():
      st.write('  2)  For each set (defined by mean concrete strength, concrete variability, quality of measurements, and VR that can be derived from the aforementioned properties), the CDF curves for different numbers of cores are constructed.')
      st.write('  3)  For a certain margin of error, the risk values were estimated from the CDF shown in the figure above. This will generate relationships between the number of cores and risk values for each set of synthetic data')
      st.write ('  4) From these relationships, the number of cores corresponding to a certain risk value is obtained')
- 
+     st.write ('It should be noted that the mimimum number of cores app does not apply to a very low mean concrete strength (less than 15 MPa; this strength class is common for non-structural concrete). As it was observed that the risk values corresponding to this strength class are very high; thus, require a lot of cores for reliable estimation of strength even larger than what is specified in the standards.') 
 
 
   
